@@ -1,5 +1,5 @@
 {
-  "name": "clyf",
+  "name": "@clyf/core",
   "version": "1.0.0",
   "description": "Generate TypeScript type files from JSON objects during development",
   "main": "dist/index.js",

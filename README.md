@@ -1,23 +1,23 @@
-# clyf
+# @clyf/core
 
 Generate TypeScript type files from JSON objects during development.
 
 ## Install
 
 ```bash
-npm install clyf
+npm install @clyf/core
 ```
 
 ## Usage
 
-clyf exports two methods: `generateTypeFromJson` for generating type files, and `withType` for generating types and returning typed data in one step.
+`@clyf/core` exports two methods: `generateTypeFromJson` for generating type files, and `withType` for generating types and returning typed data in one step.
 
 ### `generateTypeFromJson` — generate a type file
 
 Use this when you just want to create or update a `.ts` type file from any JSON object.
 
 ```typescript
-import { generateTypeFromJson } from "clyf";
+import { generateTypeFromJson } from "@clyf/core";
 
 const res = await fetch("https://api.example.com/users/1");
 const data = await res.json();
@@ -51,7 +51,7 @@ export interface Address {
 Use this when you want to generate the type file **and** get the data back with the correct TypeScript type in one call.
 
 ```typescript
-import { withType } from "clyf";
+import { withType } from "@clyf/core";
 import { User } from "./types/User";
 
 const res = await fetch("https://api.example.com/users/1");
@@ -72,7 +72,7 @@ import { User } from "./types/User";
 const user = await withType<User>("User", await res.json());
 ```
 
-Both methods work with any data source — `fetch`, `axios`, GraphQL clients, files, etc. clyf never fetches data itself; you bring the JSON, it generates the types.
+Both methods work with any data source — `fetch`, `axios`, GraphQL clients, files, etc. `@clyf/core` never fetches data itself; you bring the JSON, it generates the types.
 
 ## API
 
@@ -98,7 +98,7 @@ Returns `Promise<T>` — the same data you passed in, typed as `T`.
 
 ## Framework compatibility
 
-clyf runs on **Node.js only** — it uses `fs` to write type files to disk. This means it works anywhere your code runs on a server, but **not** in client-side browser code.
+`@clyf/core` runs on **Node.js only** — it uses `fs` to write type files to disk. This means it works anywhere your code runs on a server, but **not** in client-side browser code.
 
 ### Works in
 
@@ -115,12 +115,12 @@ clyf runs on **Node.js only** — it uses `fs` to write type files to disk. This
 - Browser bundles (Vite, CRA, etc.)
 - Edge runtimes without Node.js APIs
 
-### Using clyf with Next.js
+### Using @clyf/core with Next.js
 
 In a Server Component, you can generate types and use the data directly:
 
 ```typescript
-import { withType } from "clyf";
+import { withType } from "@clyf/core";
 import { User } from "@/types/User";
 
 export default async function UserPage() {
@@ -131,7 +131,7 @@ export default async function UserPage() {
 }
 ```
 
-> **Do not** import clyf in files marked with `"use client"` — the build will fail because `fs` is not available in the browser.
+> **Do not** import `@clyf/core` in files marked with `"use client"` — the build will fail because `fs` is not available in the browser.
 
 For client components, generate your types once on the server side, then import the generated types normally:
 
