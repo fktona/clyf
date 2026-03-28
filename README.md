@@ -1,5 +1,9 @@
 # @clyf/core
 
+[![npm version](https://img.shields.io/npm/v/@clyf/core)](https://www.npmjs.com/package/@clyf/core)
+[![license](https://img.shields.io/npm/l/@clyf/core)](./LICENSE)
+[![npm downloads](https://img.shields.io/npm/dm/@clyf/core)](https://www.npmjs.com/package/@clyf/core)
+
 Generate TypeScript type files from JSON objects during development.
 
 ## Install
@@ -150,6 +154,10 @@ export function UserCard({ user }: { user: User }) {
 - Skips regeneration if the JSON structure hasn't changed (uses a SHA-256 hash cache).
 - Automatically creates the output directory if it doesn't exist.
 - Uses `quicktype-core` under the hood to produce clean TypeScript interfaces.
+
+## Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ## Development
 
