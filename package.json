@@ -35,7 +35,7 @@
   "homepage": "https://github.com/fktona/clyf#readme",
   "sideEffects": false,
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",
