@@ -1,0 +1,9 @@
+src/
+types/
+.clyf-cache/
+example.ts
+vitest.config.ts
+*.test.ts
+*.test.js
+*.test.d.ts
+.gitignore

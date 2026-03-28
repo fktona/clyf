@@ -1,0 +1,46 @@
+{
+  "name": "clyf",
+  "version": "1.0.0",
+  "description": "Generate TypeScript type files from JSON objects during development",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "typescript",
+    "types",
+    "json",
+    "codegen",
+    "developer-tools",
+    "type-generation",
+    "api"
+  ],
+  "author": "Faith Adetona",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fktona/clyf"
+  },
+  "bugs": {
+    "url": "https://github.com/fktona/clyf/issues"
+  },
+  "homepage": "https://github.com/fktona/clyf#readme",
+  "engines": {
+    "node": ">=16"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "typescript": "^5.4.0",
+    "vitest": "^4.1.2"
+  },
+  "dependencies": {
+    "quicktype-core": "^23.0.0"
+  }
+}
